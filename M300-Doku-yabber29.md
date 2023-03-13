@@ -10,6 +10,7 @@ Die nachstehende Dokumentation zeigt alle Schritte auf, die es zur Einrichtung e
 * 03 - VirtualBox
 * 04 - Vagrant
 * 05 - Packer
+* 06 - LB2
 * 10 - Fazit
 
 ---
@@ -123,6 +124,14 @@ Im file kann man angeben dass, z. B. Apache von anfang an installiert wird oder 
 
 Packer erstellt ganze Boxen, und vagrant box add erstellt vorhande Boxen welche bereits existieren und lädt diese ins lokale repositroy herunter.
 ![Installation von packer](./Bilder/packer.png)
+
+---
+
+06 - LB2
+======
+
+> [⇧ **Nach oben**](#inhaltsverzeichnis)
+
 
 
 
