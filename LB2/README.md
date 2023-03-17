@@ -19,25 +19,18 @@ Damit ich mir das ganze besser vorstellen konnte erstellte ich zuerst ein Netzwe
 Auf dem Hostsystem können wir http://localhost:2123 eingeben. Anschliessend leitet dieser die Anfrage an die VM auf Port 80 weiter. Wir sollten in der Lage sein, die Services so nutzen zu können.
 
 Damit ich die VM per Vagrant erstellen konnte brauchte ich zwingend diese zwei Befehle:
-``
+```
 $ vagrant init generic/ubuntu1804 #Vagrantfile wird mit der Box Ubuntu 18.04 erstellt
 $ vagrant up #Die Virtuelle Maschine wird gestartet
-``
+```
 Damit ich nicht die ganze Zeit das Vagrantfile anpassen muss kann man auch mit:
-``
+```
 $ vagrant ssh #SSH verbindung 
-``
+```
 auf die VM zugreifen
 
 # Vagrant Code
 
 Um besser zu verstehen, welcher Teil was macht, habe ich denn Code analysiert und auskommentiert:
 
-=======
 
-# Inhaltsverzeichnis
-1. [Einführung](#Einführung)
-2. [Vagrantfile](#Vagrant)
-3. [Testing](#Testing)
-4. [Quellen](#Quellen)
->>>>>>> 54e7578466e0a3a050328bc73c797b3ee4fdae15
