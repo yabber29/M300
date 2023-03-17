@@ -24,15 +24,15 @@ config.vm.provision "shell" do |s|
 
 TIME_ZONE=$1
 export DEBIAN_FRONTEND=noninteractive # Abfragen für manuelle Benutzerinteraktionen deaktivieren
-timedatectl set-timezone "$TIME_ZONE" # Aktualisierung der Zeitzone
+timedatectl set-timezone "$TIME_ZONE" # Aktualisierung der Zeitzoney<2
 apt-get update -q # Updated ganzes System
 apt-get isntall -y ufw # Firewall installation
 sudo ufw --force enable
 sudo ufw allow from 10.0.2.2 to any port 22 # Port 22 für 10.0.2.2 freigeschaltet
-sudo ufw allow 80 # Port 80 für alle freischlaten
+sudo ufw allow from 10.0.2.2 to any port 80 # Port 80 für 10.0.2.2 freischlaten
 sudo systemctl start ssh
 apt-get install -q -y vim git # Vim und Git installieren ins /var/www
-apt-get install -q -y apache2 # Installieren weiterer Software
+apt-get install -q -y apache2 apache2-utils libapache2-mod-authnz-external libpam-ldap nscd # Installieren weiterer Software
 apt-get install -q -y php7.2 libapache2-mod-php7.2
 apt-get install -q -y php7.2-curl php7.2-gd php7.2-mbstring php7.2-mysql php7.2-xml php7.2-zip php7.2-bz2 php7.2-intl
 apt-get install -q -y mariadb-server mariadb-client
@@ -66,6 +66,17 @@ EOF
 fi
 a2ensite dev
 systemctl reload apache2
+# Reverse Proxy Konfigurieren
+config.vm.provision "shell", inline: <<-SHELL
+cat <<EOF > /etc/apache2/sites-available/001-reverseproxy.conf
+<VirtualHost *:80>
+  ProxyPass / http://localhost:2123/
+  ProxyPassReverse / http://localhost:2123/
+</VirtualHost>
+EOF
+a2ensite 001-reverseproxy
+systemctl restart apache2
+SHELL
 # Composer installieren
 EXPECTED_SIGNATURE="$(wget -q -O - https://composer.github.io/installer.sig)"
 php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
