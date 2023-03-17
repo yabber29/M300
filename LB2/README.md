@@ -1,6 +1,7 @@
 # LB2 Dokumentation
 ![image](https://github.com/yabber29/M300/blob/63db2126507e79fa084f5787fc82990f69c19111/Bilder/Vagrant.png)
 ============================================================================================================
+<<<<<<< HEAD
 
 # Inhaltsverzeichnis
 1. [Einführung](#Einführung)
@@ -32,3 +33,11 @@ auf die VM zugreifen
 
 Um besser zu verstehen, welcher Teil was macht, habe ich denn Code analysiert und auskommentiert:
 
+=======
+
+# Inhaltsverzeichnis
+1. [Einführung](#Einführung)
+2. [Vagrantfile](#Vagrant)
+3. [Testing](#Testing)
+4. [Quellen](#Quellen)
+>>>>>>> 54e7578466e0a3a050328bc73c797b3ee4fdae15
