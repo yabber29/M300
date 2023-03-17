@@ -8,7 +8,7 @@ Vagrant.configure("2") do |config| # Konfiguration der Vagrant-Box
   owner: "www-data", group: "www-data" # Gruppen und Benutzer die Folder festlegen
 
   config.vm.provider "virtualbox" do |vb| # Provider Konfiguration
-    vb.name = "m300_lb2"
+    vb.name = "m300_lb2-test"
     vb.memory = 2048
     vb.customize ["guestproperty", "set", :id, "/VirtualBox/GuestAdd/VBoxService/--timesync-set-threshold", 10000]
     vb.customize ["modifyvm", :id, "--natdnshostresolver1", "on"]
@@ -32,12 +32,13 @@ sudo ufw allow from 10.0.2.2 to any port 22 # Port 22 für 10.0.2.2 freigeschalt
 sudo ufw allow from 10.0.2.2 to any port 80 # Port 80 für 10.0.2.2 freischlaten
 sudo systemctl start ssh
 apt-get install -q -y vim git # Vim und Git installieren ins /var/www
-apt-get install -q -y apache2 apache2-utils libapache2-mod-authnz-external libpam-ldap nscd # Installieren weiterer Software
+apt-get install -q -y apache2 # Installieren weiterer Software
 apt-get install -q -y php7.2 libapache2-mod-php7.2
 apt-get install -q -y php7.2-curl php7.2-gd php7.2-mbstring php7.2-mysql php7.2-xml php7.2-zip php7.2-bz2 php7.2-intl
 apt-get install -q -y mariadb-server mariadb-client
 a2enmod rewrite headers
 systemctl restart apache2
+
 # Vagrant-Ordner als Apache-Root-Ordner festlegen und dorthin wechseln
 dir='/vagrant/www'
 if [ ! -d "$dir" ]; then
@@ -60,23 +61,31 @@ if [ ! -f "$file" ]; then
   php_flag display_errors On
   EnableSendfile Off
 </Directory>
+
 EOF
 )
-  echo "$SITE_CONF" > "$file"
-fi
-a2ensite dev
-systemctl reload apache2
-# Reverse Proxy Konfigurieren
-config.vm.provision "shell", inline: <<-SHELL
-cat <<EOF > /etc/apache2/sites-available/001-reverseproxy.conf
+
+file='/etc/apache2/sites-available/001-reverseproxy.conf'
+if [ ! -f "$file" ]; then
+  Proxy_CONF=$(cat <<EOF
+  listen 80
 <VirtualHost *:80>
-  ProxyPass / http://localhost:2123/
-  ProxyPassReverse / http://localhost:2123/
+  ProxyPass "/proxy" "http://localhost:2123/"
+  ProxyPassReverse "/proxy" "http://localhost:2123/"
 </VirtualHost>
 EOF
+
+  )
+
+  echo "$SITE_CONF" > "$file"
+  echo "$Proxy_CONF" > "$file"
+fi
+a2ensite dev
 a2ensite 001-reverseproxy
-systemctl restart apache2
-SHELL
+a2enmod Proxy
+a2enmod Proxy_http
+systemctl reload apache2
+
 # Composer installieren
 EXPECTED_SIGNATURE="$(wget -q -O - https://composer.github.io/installer.sig)"
 php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
