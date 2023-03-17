@@ -187,7 +187,7 @@ end
 
 Hier sieht man die Index Seite auf dem Apache Server von http://localhost:2123
 
-![image]()
+![image](https://github.com/yabber29/M300/blob/66f0f9d3b7f44179aef41a074812d492bebe1d05/Bilder/index.png)
 
 ## Adminer
 Nachdem man sich erfolgreich auf dem GUI mit den gegebenen Credentials angemeldet hat, ist man in der Lage seine Datenbank durch Adminer zu verwalten. Sehr praktisch und nützlich für DB-Admins.
