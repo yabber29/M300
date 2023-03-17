@@ -41,7 +41,7 @@ $ vagrant destroy # Löscht die VM
 Um besser zu verstehen, welcher Teil was macht, habe ich denn Code analysiert und auskommentiert:
 
 ```
-time_zone = "Europe/Zurich"
+time_zone = "Europe/Zurich" # Zeitzone gesetzt
 
 Vagrant.configure("2") do |config| # Konfiguration der Vagrant-Box
   config.vm.box = "generic/ubuntu1804" # Verwendet die Ubuntu 18.04-Box
@@ -51,8 +51,8 @@ Vagrant.configure("2") do |config| # Konfiguration der Vagrant-Box
   owner: "www-data", group: "www-data" # Gruppen und Benutzer die Folder festlegen
 
   config.vm.provider "virtualbox" do |vb| # Provider Konfiguration
-    vb.name = "m300_lb2-test"
-    vb.memory = 2048
+    vb.name = "m300_lb2" # VM Name
+    vb.memory = 2048 # RAM in MB
     vb.customize ["guestproperty", "set", :id, "/VirtualBox/GuestAdd/VBoxService/--timesync-set-threshold", 10000]
     vb.customize ["modifyvm", :id, "--natdnshostresolver1", "on"]
     vb.customize ["modifyvm", :id, "--natdnsproxy1", "on"]
@@ -180,4 +180,18 @@ SHELL
   end
 end
 ```
+
+**Skirpt Ende**
+
+# Testing
+
+Hier sieht man die Index Seite auf dem Apache Server von http://localhost:2123
+
+![image]()
+
+## Adminer
+Nachdem man sich erfolgreich auf dem GUI mit den gegebenen Credentials angemeldet hat, ist man in der Lage seine Datenbank durch Adminer zu verwalten. Sehr praktisch und nützlich für DB-Admins.
+
+## OPcache
+OPcache ist primär für die Systemüberwachung konzipiert worden. Zu sehen sind nützliche und wichtige Informationen zusammengetragen auf einer Seite.
 
