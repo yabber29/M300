@@ -20,7 +20,7 @@ config.vm.provision "shell" do |s|
     s.args = [time_zone]
     s.inline = <<-SHELL
     
-### Konfiguration und installation von Software ###
+# Konfiguration und installation von Software 
 
 TIME_ZONE=$1
 export DEBIAN_FRONTEND=noninteractive # Abfragen für manuelle Benutzerinteraktionen deaktivieren
