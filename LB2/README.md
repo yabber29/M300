@@ -192,6 +192,9 @@ Hier sieht man die Index Seite auf dem Apache Server von http://localhost:2123
 ## Adminer
 Nachdem man sich erfolgreich auf dem GUI mit den gegebenen Credentials angemeldet hat, ist man in der Lage seine Datenbank durch Adminer zu verwalten. Sehr praktisch und nützlich für DB-Admins.
 
+![image](https://github.com/yabber29/M300/blob/4d5b176d63775be84893ac78a538035ec0d48d61/Bilder/Adminer.png)
+
 ## OPcache
 OPcache ist primär für die Systemüberwachung konzipiert worden. Zu sehen sind nützliche und wichtige Informationen zusammengetragen auf einer Seite.
 
+![image](https://github.com/yabber29/M300/blob/4d5b176d63775be84893ac78a538035ec0d48d61/Bilder/opcache.png)
