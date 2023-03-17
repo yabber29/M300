@@ -81,7 +81,11 @@ else
   sudo -H -u vagrant bash -c 'composer global require hirak/prestissimo'
 fi
 
-
+# phpinfo script 
+file='phpinfo.php'
+if [ ! -f "$file" ]; then
+  echo '<?php phpinfo();' > "$file"
+fi
 # OPcache gui script herunterladen von Webseite
 file='opcache.php'
 if [ ! -f "$file" ]; then
