@@ -36,6 +36,8 @@ apt-get install -q -y apache2 # Installieren weiterer Software
 apt-get install -q -y php7.2 libapache2-mod-php7.2
 apt-get install -q -y php7.2-curl php7.2-gd php7.2-mbstring php7.2-mysql php7.2-xml php7.2-zip php7.2-bz2 php7.2-intl
 apt-get install -q -y mariadb-server mariadb-client
+a2enmod Proxy
+a2enmod Proxy_http
 a2enmod rewrite headers
 systemctl restart apache2 # Startet den Dienst neu
 
@@ -82,8 +84,7 @@ EOF
 fi
 a2ensite dev
 a2ensite 001-reverseproxy
-a2enmod Proxy
-a2enmod Proxy_http
+
 systemctl reload apache2
 
 # Composer installieren

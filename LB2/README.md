@@ -1,7 +1,6 @@
 # LB2 Dokumentation
 ![image](https://github.com/yabber29/M300/blob/63db2126507e79fa084f5787fc82990f69c19111/Bilder/Vagrant.png)
 ============================================================================================================
-<<<<<<< HEAD
 
 # Inhaltsverzeichnis
 1. [Einführung](#Einführung)
@@ -198,3 +197,14 @@ Nachdem man sich erfolgreich auf dem GUI mit den gegebenen Credentials angemelde
 OPcache ist primär für die Systemüberwachung konzipiert worden. Zu sehen sind nützliche und wichtige Informationen zusammengetragen auf einer Seite.
 
 ![image](https://github.com/yabber29/M300/blob/4d5b176d63775be84893ac78a538035ec0d48d61/Bilder/opcache.png)
+
+## Firewall Rules
+
+
+
+# Quellen
+
+Beschreibung | Quelle
+Vagrant.png | https://www.google.com/url?sa=i&url=https%3A%2F%2Fgithub.com%2Ftopics%2Fvagrant&psig=AOvVaw0SOtFeHJVQ3lKXCpqD9XtK&ust=1679145287107000&source=images&cd=vfe&ved=0CBAQjRxqFwoTCPCP3P-F4_0CFQAAAAAdAAAAABAj
+
+Restliche Bilder | Selbst gemacht
