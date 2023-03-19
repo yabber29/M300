@@ -40,7 +40,7 @@ $ vagrant destroy # Löscht die VM
 Um besser zu verstehen, welcher Teil was macht, habe ich denn Code analysiert und auskommentiert:
 
 ```
-time_zone = "Europe/Zurich" # Zeitzone gesetzt
+time_zone = "Europe/Zurich"
 
 Vagrant.configure("2") do |config| # Konfiguration der Vagrant-Box
   config.vm.box = "generic/ubuntu1804" # Verwendet die Ubuntu 18.04-Box
@@ -51,7 +51,7 @@ Vagrant.configure("2") do |config| # Konfiguration der Vagrant-Box
 
   config.vm.provider "virtualbox" do |vb| # Provider Konfiguration
     vb.name = "m300_lb2" # VM Name
-    vb.memory = 2048 # RAM in MB
+    vb.memory = 2048 # RAN in MB
     vb.customize ["guestproperty", "set", :id, "/VirtualBox/GuestAdd/VBoxService/--timesync-set-threshold", 10000]
     vb.customize ["modifyvm", :id, "--natdnshostresolver1", "on"]
     vb.customize ["modifyvm", :id, "--natdnsproxy1", "on"]
@@ -66,21 +66,26 @@ config.vm.provision "shell" do |s|
 
 TIME_ZONE=$1
 export DEBIAN_FRONTEND=noninteractive # Abfragen für manuelle Benutzerinteraktionen deaktivieren
-timedatectl set-timezone "$TIME_ZONE" # Aktualisierung der Zeitzoney<2
+timedatectl set-timezone "$TIME_ZONE" # Aktualisierung der Zeitzone
 apt-get update -q # Updated ganzes System
 apt-get isntall -y ufw # Firewall installation
 sudo ufw --force enable
 sudo ufw allow from 10.0.2.2 to any port 22 # Port 22 für 10.0.2.2 freigeschaltet
-sudo ufw allow from 10.0.2.2 to any port 80 # Port 80 für 10.0.2.2 freischlaten
+sudo ufw allow 80 # Port 80 für alle freischlaten
 sudo systemctl start ssh
 apt-get install -q -y vim git # Vim und Git installieren ins /var/www
 apt-get install -q -y apache2 # Installieren weiterer Software
 apt-get install -q -y php7.2 libapache2-mod-php7.2
 apt-get install -q -y php7.2-curl php7.2-gd php7.2-mbstring php7.2-mysql php7.2-xml php7.2-zip php7.2-bz2 php7.2-intl
 apt-get install -q -y mariadb-server mariadb-client
+apt-get install -y ldap-utils
 a2enmod rewrite headers
-systemctl restart apache2 # Startet den Dienst neu
-
+ldapsearch -x -LLL -H ldap://your-ldap-server -D "cn=admin,dc=example,dc=com" -w yourpassword -b "ou=users,dc=example,dc=com" "(objectclass=*)" cn email
+sudo a2enmod proxy
+sudo a2enmod proxy_http
+sudo a2enmod proxy_balancer
+sudo a2enmod lbmethod_byrequests
+systemctl restart apache2
 # Vagrant-Ordner als Apache-Root-Ordner festlegen und dorthin wechseln
 dir='/vagrant/www'
 if [ ! -d "$dir" ]; then
@@ -103,31 +108,26 @@ if [ ! -f "$file" ]; then
   php_flag display_errors On
   EnableSendfile Off
 </Directory>
-
 EOF
 )
-
-file='/etc/apache2/sites-available/001-reverseproxy.conf'
-if [ ! -f "$file" ]; then
-  Proxy_CONF=$(cat <<EOF
-  listen 80
-<VirtualHost *:80>
-  ProxyPass "/proxy" "http://localhost:2123/"
-  ProxyPassReverse "/proxy" "http://localhost:2123/"
-</VirtualHost>
-EOF
-
-  )
-
   echo "$SITE_CONF" > "$file"
-  echo "$Proxy_CONF" > "$file"
 fi
 a2ensite dev
-a2ensite 001-reverseproxy
-a2enmod Proxy
-a2enmod Proxy_http
-systemctl reload apache2
+sudo touch /etc/apache2/sites-available/reverse-proxy.conf
+sudo bash -c 'cat > /etc/apache2/sites-available/reverse-proxy.conf << EOL
+<VirtualHost *:80>
+ProxyPreserveHost On
+ProxyPass / http://127.0.0.1:2123/
+ProxyPassReverse / http://127.0.0.1:2123/
+ServerName reverse-proxy.example.com
+</VirtualHost>
+EOL'
 
+# Vhost aktivieren
+sudo a2ensite reverse-proxy.conf
+
+# Apache neustarten
+sudo service apache2 restart
 # Composer installieren
 EXPECTED_SIGNATURE="$(wget -q -O - https://composer.github.io/installer.sig)"
 php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
