@@ -212,21 +212,23 @@ Dies gibt an, dass die Verbindung erfolgreich war (HTTP/1.1 200 OK) und dass der
 
 # Persönlicher Wissenstand
 
-**Git** ist ein verteiltes Versionskontrollsystem, das Entwicklern ermöglicht, gemeinsam an Code-Projekten zu arbeiten und Änderungen zu verfolgen. Es ist besonders nützlich bei der Zusammenarbeit an großen Projekten oder bei der Verwaltung von Änderungen an Software-Code.
+ Die Zusammenarbeit am Code und das Nachverfolgen von Änderungen wird mit **Git** ermöglicht – einem verteilten Versionskontrollsystem.  Bei der Arbeit an großen Projekten oder der Verwaltung von Softwarecode-Updates ist dieses Tool besonders nützlich.
 
-**Vagrant** ist ein Tool zur Erstellung und Verwaltung von virtuellen Entwicklungsumgebungen. Es erleichtert Entwicklern das Einrichten von Umgebungen mit spezifischen Software- und Betriebssystemanforderungen, indem es automatisch virtuelle Maschinen erstellt und die benötigte Software installiert.
+ Die Verwaltung virtueller Entwicklungsumgebungen wird mit **Vagrant** vereinfacht, einem Tool, das die Erstellung virtueller Maschinen und die Installation der erforderlichen Software automatisiert.  Es wurde entwickelt, um Entwicklern das Einrichten von Umgebungen mit spezifischen Anforderungen, wie z. B. Software- und Betriebssystemanforderungen, zu erleichtern.
 
-**Cloud Computing** bezieht sich auf die Bereitstellung von IT-Ressourcen und -Diensten über das Internet. Es umfasst Infrastruktur, Plattformen und Software, die von einem Drittanbieter bereitgestellt und verwaltet werden. Cloud Computing ist insbesondere für Unternehmen und Organisationen nützlich, die skalierbare und flexible IT-Infrastruktur benötigen, ohne dafür eine eigene Infrastruktur aufbauen zu müssen.
+ IT-Ressourcen und -Dienste, die über das Internet bereitgestellt werden, sind das, worum es bei **Cloud Computing** geht.  Es wird von einem Drittanbieter verwaltet und umfasst Infrastruktur, Software und Plattformen.  Mit Cloud Computing müssen Unternehmen keine eigene Infrastruktur aufbauen, was es ideal für diejenigen macht, die eine flexible und skalierbare IT-Infrastruktur suchen.
 
-**IaC** (Infrastructure as Code) ist eine Methode zur Automatisierung der Infrastrukturverwaltung. Es beinhaltet die Verwendung von Code, um Infrastrukturkomponenten wie Server, Netzwerke und Datenbanken zu erstellen und zu verwalten. Dadurch können Entwickler und IT-Teams Infrastruktur schneller und effizienter bereitstellen und verwalten.
+ Die Verwendung von Code zum Erstellen und Verwalten von Infrastrukturkomponenten wie Servern, Netzwerken und Datenbanken wird als **IaC** (Infrastructure as Code) bezeichnet.  IaC ist ein innovativer Ansatz zur Automatisierung des Infrastrukturmanagements, der eine schnellere und effizientere Infrastrukturbereitstellung und -verwaltung durch Entwickler und IT-Teams ermöglicht.
 
-**Firewall** und **Reverse Proxy** sind Sicherheitsmechanismen zum Schutz von Netzwerken und Anwendungen. Eine Firewall blockiert unerwünschten Datenverkehr, während ein Reverse Proxy-Server als Vermittler zwischen Clientanwendungen und Servern fungiert. Beide Mechanismen sind wichtig, um Netzwerke und Anwendungen vor Bedrohungen wie Hackerangriffen zu schützen.
+ Anwendungen und Netzwerke können durch die Implementierung eines **Reverse-Proxys** oder einer **Firewall** gesichert werden.  Eine Firewall dient dazu, unerwünschten Datenverkehr zu blockieren, und ein Reverse-Proxy-Server ist ein Vermittler zwischen Client-Programmen und Servern.  Es ist wichtig, dass beide Mechanismen vorhanden sind, um sich gegen feindliche Aktivitäten wie Cyberangriffe zu verteidigen.
 
-**SSH**(Secure Shell) ist ein Protokoll zur sicheren Remote-Verbindung zu einem anderen Computer oder Server. Es ermöglicht Benutzern, Befehle auszuführen und Dateien sicher zu übertragen. SSH ist ein wichtiger Sicherheitsmechanismus bei der Verwaltung von Netzwerken und Servern.
+ **Secure Shell (SSH)** ist ein Protokoll, das für die sichere Fernverbindung mit einem Computer oder Server verwendet wird.  Dieser Mechanismus ermöglicht sichere Dateiübertragungen und erlaubt Benutzern, Befehle auszuführen.  Für die Netzwerk- und Serververwaltung ist SSH ein wichtiges Sicherheitstool.
 
-**Benutzerverwaltung** bezieht sich auf die Verwaltung von Benutzerkonten in einem Computersystem oder einer Anwendung. Es umfasst die Erstellung, Änderung und Löschung von Benutzerkonten sowie die Zuweisung von Zugriffsrechten. Die Verwaltung von Benutzerkonten ist wichtig, um sicherzustellen, dass nur autorisierte Benutzer auf das System zugreifen können.
+ In einem Computersystem oder einer Anwendung wird die Verwaltung von Benutzerkonten als **Benutzerverwaltung** bezeichnet, die das Erstellen, Ändern und Entfernen von Benutzerkonten umfasst, während Zugriffsrechte gewährt werden.  Es ist von größter Bedeutung, Benutzerkonten so zu kontrollieren, dass nur authentifizierte Benutzer auf das System zugreifen können.
 
-**Authentifizierung** und **Autorisierung** sind Mechanismen zur Sicherstellung der Identität und Berechtigung von Benutzern in einem Computersystem oder einer Anwendung. Die Authentifizierung stellt sicher, dass der Benutzer tatsächlich der ist, für den er sich ausgibt, während die Autorisierung festlegt, welche Aktionen ein Benutzer ausführen kann, sobald er authentifiziert ist. Diese Mechanismen sind besonders wichtig, um den Zugriff auf sensible Daten und Systeme zu kontrollieren und sicherzustellen, dass nur autorisierte Benutzer darauf zugreifen können.
+ Um den Zugriff auf vertrauliche Daten und Systeme zu kontrollieren, ist es wichtig, über Mechanismen zu verfügen, die die Identität und die Berechtigungsstufen von Benutzern auf einem Computersystem oder einer Anwendung bestätigen.  Die beiden primären Mechanismen dafür sind **Authentifizierung** und **Autorisierung**.  Die Authentifizierung überprüft die behauptete Identität des Benutzers und stellt sicher, dass er derjenige ist, für den er sich ausgibt, während die Autorisierung festlegt, welche Aufgaben er nach der Bestätigung ausführen kann.  Nur autorisierte Benutzer sollten Zugriff auf sensible Daten und Systeme haben, die diese Mechanismen wirksam schützen helfen.
+
+
 
 # Reflexion
 
