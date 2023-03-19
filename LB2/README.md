@@ -200,7 +200,29 @@ OPcache ist primär für die Systemüberwachung konzipiert worden. Zu sehen sind
 
 ## Firewall Rules
 
+## Reverse Proxy
 
+# Persönlicher Wissenstand
+
+**Git** ist ein verteiltes Versionskontrollsystem, das Entwicklern ermöglicht, gemeinsam an Code-Projekten zu arbeiten und Änderungen zu verfolgen. Es ist besonders nützlich bei der Zusammenarbeit an großen Projekten oder bei der Verwaltung von Änderungen an Software-Code.
+
+**Vagrant** ist ein Tool zur Erstellung und Verwaltung von virtuellen Entwicklungsumgebungen. Es erleichtert Entwicklern das Einrichten von Umgebungen mit spezifischen Software- und Betriebssystemanforderungen, indem es automatisch virtuelle Maschinen erstellt und die benötigte Software installiert.
+
+**Cloud Computing** bezieht sich auf die Bereitstellung von IT-Ressourcen und -Diensten über das Internet. Es umfasst Infrastruktur, Plattformen und Software, die von einem Drittanbieter bereitgestellt und verwaltet werden. Cloud Computing ist insbesondere für Unternehmen und Organisationen nützlich, die skalierbare und flexible IT-Infrastruktur benötigen, ohne dafür eine eigene Infrastruktur aufbauen zu müssen.
+
+**IaC** (Infrastructure as Code) ist eine Methode zur Automatisierung der Infrastrukturverwaltung. Es beinhaltet die Verwendung von Code, um Infrastrukturkomponenten wie Server, Netzwerke und Datenbanken zu erstellen und zu verwalten. Dadurch können Entwickler und IT-Teams Infrastruktur schneller und effizienter bereitstellen und verwalten.
+
+**Firewall** und **Reverse Proxy** sind Sicherheitsmechanismen zum Schutz von Netzwerken und Anwendungen. Eine Firewall blockiert unerwünschten Datenverkehr, während ein Reverse Proxy-Server als Vermittler zwischen Clientanwendungen und Servern fungiert. Beide Mechanismen sind wichtig, um Netzwerke und Anwendungen vor Bedrohungen wie Hackerangriffen zu schützen.
+
+**SSH**(Secure Shell) ist ein Protokoll zur sicheren Remote-Verbindung zu einem anderen Computer oder Server. Es ermöglicht Benutzern, Befehle auszuführen und Dateien sicher zu übertragen. SSH ist ein wichtiger Sicherheitsmechanismus bei der Verwaltung von Netzwerken und Servern.
+
+**Benutzerverwaltung** bezieht sich auf die Verwaltung von Benutzerkonten in einem Computersystem oder einer Anwendung. Es umfasst die Erstellung, Änderung und Löschung von Benutzerkonten sowie die Zuweisung von Zugriffsrechten. Die Verwaltung von Benutzerkonten ist wichtig, um sicherzustellen, dass nur autorisierte Benutzer auf das System zugreifen können.
+
+**Authentifizierung** und **Autorisierung** sind Mechanismen zur Sicherstellung der Identität und Berechtigung von Benutzern in einem Computersystem oder einer Anwendung. Die Authentifizierung stellt sicher, dass der Benutzer tatsächlich der ist, für den er sich ausgibt, während die Autorisierung festlegt, welche Aktionen ein Benutzer ausführen kann, sobald er authentifiziert ist. Diese Mechanismen sind besonders wichtig, um den Zugriff auf sensible Daten und Systeme zu kontrollieren und sicherzustellen, dass nur autorisierte Benutzer darauf zugreifen können.
+
+# Reflexion
+
+# Wissenszuwachs
 
 # Quellen
 
