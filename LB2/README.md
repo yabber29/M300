@@ -199,13 +199,16 @@ OPcache ist primär für die Systemüberwachung konzipiert worden. Zu sehen sind
 ![image](https://github.com/yabber29/M300/blob/4d5b176d63775be84893ac78a538035ec0d48d61/Bilder/opcache.png)
 
 ## Firewall Rules
+Die Firewall Rules wurden so gesetzt das nur der Host auf die VM zugreifen kann also IP auf any zu Port 22 (SSH), und Port 80 (http) wurde für alle aufgemacht.
 
-![image]()
+![image](https://github.com/yabber29/M300/blob/5891e8600685b5128808836a92efe26c0cd16e7f/Bilder/Firewall-rules.png)
 
 ## Reverse Proxy
-
+Der Output zeigt dies an:
 
 ![image](https://github.com/yabber29/M300/blob/fe7087e56d20a709f7435e3dd351eb8004e95c80/Bilder/Reverse-Proxy.png)
+
+Dies gibt an, dass die Verbindung erfolgreich war (HTTP/1.1 200 OK) und dass der Server Apache/2.4.29 (Ubuntu) verwendet wird. Die Antwort enthält auch Informationen zur letzten Änderung der angeforderten Ressource (Last-Modified) und eine ETag, die für Caching-Zwecke verwendet wird.
 
 # Persönlicher Wissenstand
 
@@ -226,6 +229,19 @@ OPcache ist primär für die Systemüberwachung konzipiert worden. Zu sehen sind
 **Authentifizierung** und **Autorisierung** sind Mechanismen zur Sicherstellung der Identität und Berechtigung von Benutzern in einem Computersystem oder einer Anwendung. Die Authentifizierung stellt sicher, dass der Benutzer tatsächlich der ist, für den er sich ausgibt, während die Autorisierung festlegt, welche Aktionen ein Benutzer ausführen kann, sobald er authentifiziert ist. Diese Mechanismen sind besonders wichtig, um den Zugriff auf sensible Daten und Systeme zu kontrollieren und sicherzustellen, dass nur autorisierte Benutzer darauf zugreifen können.
 
 # Reflexion
+
+**Tag 1:**
+Der erste Tag war ziemlich theoretisch, doch konnten wir zumindest einige Einblicke in das Modul bekommen. Der Einstieg war klar und ich wusste bei jedem Thema schon ein wenig.
+Die ersten Aufträge fand ich gut, da man die Systeme ausprobieren konnte und sich einen Überblick schaffen konnte. Doch einige Probleme gab es schon, zum Beispiel bei der Installation einer VM von Hand kamen einige Fehler auf mich zu, welche ich aber mit ein wenig Recherche im Internet herausfinden und lösen konnte. Das zweite Problem war bei der Installation einer VM per Vagrant, da machte mir der Antivirus einen Strich durch die Rechnung, die Domain musste ich in die trusted Domains reinschreiben, damit es erkannt wird. Der Rest funktionierte perfekt und ich konnte einiges neues dazu lernen.
+
+**Tag2:**
+Durch die Repetitionen am Anfang der Stunde konnte ich mich wieder gut an das letzte Mal erinnern. Heute hatte ich mich um die Dokumentation gekümmert, sodass ich wenigstens etwas darin hatten. Für mich war Markdown etwas neues und ich musste alles neu erlernen. Durch einige Tutorial fiel mir die Einführung leichter, doch sie war nicht reibungslos. Bei der Aufgabe vom Host gerät auf die Localhost Webseite zuzugreifen, per portforwarder hatte ich einige Fehler und Probleme, doch alle Probleme konnte ich lösen und am Schluss funktionierte alles. Dies funktionierte, da ich einige Sachen im Internet gefunden und ausprobiert hatte. Mit der Anleitung vom Modul bin ich nicht 100% schlau geworden, doch ich fand einen Weg. Doch aus diesem Tag konnte ich einiges mitnehmen.
+
+**Tag 3:**
+Heute fing ich an Vagrant ein wenig mehr zu verstehen wie die Befehle funktionieren aber auch wie das Vagrantfile mit der VM zusammenhängt. Heute wollte ich auch einige neue Boxen ausprobieren um zu sehen, ob mir ein andere OS besser liegt. Bei diesem Punkt hatte ich Packer angeschaut, welches spannend war doch bei mir nicht ganz funktioniert hatte, doch die Funktionsweise wurde mir klar. Heute hatte ich mir auch einige Ideen zu meiner LB2 gemacht doch dies war nicht so einfach wie es schien. Als der Tag zu Ende ging dokumentierte ich das gelernte und lud alles, was ich hatte auf mein GitHub Account hoch.
+
+**Tag 4:**
+Der heutige Schwerpunkt lag bei der Sicherheit der VM, darunter gehört eine Firewall / Reverse Proxy, Rechteverwaltung, SSH und Autorisierung wie Authentifizierung. Der heutige Tag gefiel mir ziemlich gut da, ich keine grosse Probleme hatte bei der Durchführung der eben genannten Sicherheitsaspekten. Zudem fing ich heute an meine Idee umzusetzen und ein Vagrantfile zu erstellen. Durch das Internet und Foren konnte ich einige physikalische Probleme überwältigen, Bsp. Wenn ich ''Vagrant up'' machte, hielt es immer bei SSH auth method: private key, durch das Forum wusste ich, dass ich in meinem Virenschutz eine weitere Domain eintragen musste, danach lief alles wie zuvor. Da ich heute mehr für die Sicherheit aufgewandt habe, arbeitete ich Zuhause noch weiter.
 
 # Wissenszuwachs
 
