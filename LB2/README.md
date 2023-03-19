@@ -244,6 +244,13 @@ Heute fing ich an Vagrant ein wenig mehr zu verstehen wie die Befehle funktionie
 Der heutige Schwerpunkt lag bei der Sicherheit der VM, darunter gehört eine Firewall / Reverse Proxy, Rechteverwaltung, SSH und Autorisierung wie Authentifizierung. Der heutige Tag gefiel mir ziemlich gut da, ich keine grosse Probleme hatte bei der Durchführung der eben genannten Sicherheitsaspekten. Zudem fing ich heute an meine Idee umzusetzen und ein Vagrantfile zu erstellen. Durch das Internet und Foren konnte ich einige physikalische Probleme überwältigen, Bsp. Wenn ich ''Vagrant up'' machte, hielt es immer bei SSH auth method: private key, durch das Forum wusste ich, dass ich in meinem Virenschutz eine weitere Domain eintragen musste, danach lief alles wie zuvor. Da ich heute mehr für die Sicherheit aufgewandt habe, arbeitete ich Zuhause noch weiter.
 
 # Wissenszuwachs
+Was habe ich alles gelernt:
+* Vagrant kennengelernt
+* Firewall und Reverse Proxy auf Ubuntu 
+* Automatisierung mit einem File
+* Portforwarding von Host aus zugänglich
+* Login im vorhinein festlegen
+
 
 # Quellen
 

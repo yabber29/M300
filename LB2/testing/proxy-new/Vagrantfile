@@ -81,10 +81,10 @@ ServerName reverse-proxy.example.com
 </VirtualHost>
 EOL'
 
-# Enable the virtual host
+# Vhost aktivieren
 sudo a2ensite reverse-proxy.conf
 
-# Restart Apache
+# Apache neustarten
 sudo service apache2 restart
 # Composer installieren
 EXPECTED_SIGNATURE="$(wget -q -O - https://composer.github.io/installer.sig)"
