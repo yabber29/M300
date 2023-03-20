@@ -210,6 +210,12 @@ Der Output zeigt dies an:
 
 Dies gibt an, dass die Verbindung erfolgreich war (HTTP/1.1 200 OK) und dass der Server Apache/2.4.29 (Ubuntu) verwendet wird. Die Antwort enthält auch Informationen zur letzten Änderung der angeforderten Ressource (Last-Modified) und eine ETag, die für Caching-Zwecke verwendet wird.
 
+## HTTPS
+Zusätzlich wollte ich https aktivieren doch dies gelang mir in der kurzen nicht mehr. Mir wird nur die normale Standart Seite von Apache angezeigt mit HTTPS doch mit meiner Seite funktioniert dies leider nicht.
+
+![image](https://github.com/yabber29/M300/blob/bf85bbf1938eeffb74d2ed972b2183a878be0cab/Bilder/HTTPS.png)
+
+
 # Persönlicher Wissenstand
 
  Die Zusammenarbeit am Code und das Nachverfolgen von Änderungen wird mit **Git** ermöglicht – einem verteilten Versionskontrollsystem.  Bei der Arbeit an großen Projekten oder der Verwaltung von Softwarecode-Updates ist dieses Tool besonders nützlich.
