@@ -1,0 +1,32 @@
+Vagrant.configure("2") do |config|
+  config.vm.box = "generic/ubuntu1804"
+
+  # Forward port 443 to host machine
+  config.vm.network "forwarded_port", guest: 443, host: 8443
+
+  # Install Apache and SSL libraries
+  config.vm.provision "shell", inline: <<-SHELL
+    apt-get update
+    apt-get install -y apache2 openssl
+    a2enmod ssl
+  SHELL
+
+  # Generate SSL certificate
+  config.vm.provision "shell", privileged: false, inline: <<-SHELL
+    sudo openssl req -new -newkey rsa:2048 -days 365 -nodes -x509 \
+      -subj "/C=US/ST=California/L=San Francisco/O=Acme Inc/OU=IT Department/CN=example.com" \
+      -keyout /etc/ssl/private/apache-selfsigned.key -out /etc/ssl/certs/apache-selfsigned.crt
+  SHELL
+
+  # Configure Apache to use SSL and disable port 80
+  config.vm.provision "shell", inline: <<-SHELL
+    # Disable port 80
+    sudo sed -i 's/^\(\s*Listen\s*\)80$/#\180/g' /etc/apache2/ports.conf
+
+    # Configure SSL
+    sudo sed -i 's/^\(\s*SSLCertificateFile\s*\).*$/\1\/etc\/ssl\/certs\/apache-selfsigned.crt/g' /etc/apache2/sites-available/default-ssl.conf
+    sudo sed -i 's/^\(\s*SSLCertificateKeyFile\s*\).*$/\1\/etc\/ssl\/private\/apache-selfsigned.key/g' /etc/apache2/sites-available/default-ssl.conf
+    a2ensite default-ssl
+    service apache2 reload
+  SHELL
+end
