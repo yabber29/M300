@@ -10,12 +10,12 @@
 
 # Einführung
 
-Da viele einen Webserver mit einer Datenbank machten, wollten wir etwas leicht "spezielleres" machen. Im Frontend arbeitet ein Apache2 Webserver, der die Dienste **Adminer und OPcache** in einem GUI ersichtlich machen sollte. Im Hintergrund laufen PHP und MariaDB, damit die Services ordnungsgemäss funktionieren. All dies sollte via Portweiterleitung ereichbar sein.
+Da viele einen Webserver mit einer Datenbank machten, will ich etwas leicht "spezielleres" machen. Im Frontend arbeitet ein Apache2 Webserver, der die Dienste **Adminer und OPcache** in einem GUI ersichtlich machen sollte. Im Hintergrund laufen PHP und MariaDB, damit die Services ordnungsgemäss funktionieren. All dies sollte via Portweiterleitung ereichbar sein.
 
 Damit ich mir das ganze besser vorstellen konnte erstellte ich zuerst ein Netzwerkplan.
 ![image](https://github.com/yabber29/M300/blob/54e7578466e0a3a050328bc73c797b3ee4fdae15/Bilder/Netzwerkplan.png)
 
-Auf dem Hostsystem können wir http://localhost:2123 eingeben. Anschliessend leitet dieser die Anfrage an die VM auf Port 80 weiter. Wir sollten in der Lage sein, die Services so nutzen zu können.
+Auf dem Hostsystem kann ich http://localhost:2123 eingeben. Anschliessend leitet dieser die Anfrage an die VM auf Port 80 weiter. Ich sollte in der Lage sein, die Services so nutzen zu können.
 
 Damit ich die VM per Vagrant erstellen konnte brauchte ich zwingend diese zwei Befehle:
 ```
@@ -239,7 +239,7 @@ Zusätzlich wollte ich https aktivieren doch dies gelang mir in der kurzen nicht
 # Reflexion
 
 **Tag 1:**
-Der erste Tag war ziemlich theoretisch, doch konnten wir zumindest einige Einblicke in das Modul bekommen. Der Einstieg war klar und ich wusste bei jedem Thema schon ein wenig.
+Der erste Tag war ziemlich theoretisch, doch ich konnte zumindest einige Einblicke in das Modul bekommen. Der Einstieg war klar und ich wusste bei jedem Thema schon ein wenig.
 Die ersten Aufträge fand ich gut, da man die Systeme ausprobieren konnte und sich einen Überblick schaffen konnte. Doch einige Probleme gab es schon, zum Beispiel bei der Installation einer VM von Hand kamen einige Fehler auf mich zu, welche ich aber mit ein wenig Recherche im Internet herausfinden und lösen konnte. Das zweite Problem war bei der Installation einer VM per Vagrant, da machte mir der Antivirus einen Strich durch die Rechnung, die Domain musste ich in die trusted Domains reinschreiben, damit es erkannt wird. Der Rest funktionierte perfekt und ich konnte einiges neues dazu lernen.
 
 **Tag2:**
