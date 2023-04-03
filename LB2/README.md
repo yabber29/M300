@@ -6,7 +6,7 @@
 1. [Einführung](#Einführung)
 2. [Vagrantfile](#Vagrant)
 3. [Testing](#Testing)
-4. [Persönlicher Wissenstand](#Persönlicher Wissenstand)
+4. [Persönlicher Wissenstand](#Persönlicher-Wissenstand)
 5. [Reflexion](#Reflexion)
 6. [Wissenszuwachs](#Wissenszuwachs)
 7. [Quellen](#Quellen)
@@ -219,7 +219,7 @@ Zusätzlich wollte ich https aktivieren doch dies gelang mir in der kurzen nicht
 ![image](https://github.com/yabber29/M300/blob/bf85bbf1938eeffb74d2ed972b2183a878be0cab/Bilder/HTTPS.png)
 
 
-# Persönlicher Wissenstand
+# Persönlicher-Wissenstand
 
  Die Zusammenarbeit am Code und das Nachverfolgen von Änderungen wird mit **Git** ermöglicht – einem verteilten Versionskontrollsystem.  Bei der Arbeit an großen Projekten oder der Verwaltung von Softwarecode-Updates ist dieses Tool besonders nützlich.
 
