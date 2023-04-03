@@ -6,7 +6,10 @@
 1. [Einführung](#Einführung)
 2. [Vagrantfile](#Vagrant)
 3. [Testing](#Testing)
-4. [Quellen](#Quellen)
+4. [Persönlicher Wissenstand](#PersönlicherWissenstand)
+5. [Reflexion](#Reflexion)
+6. [Wissenszuwachs](#Wissenszuwachs)
+7. [Quellen](#Quellen)
 
 # Einführung
 
