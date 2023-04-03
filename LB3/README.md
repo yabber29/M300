@@ -18,7 +18,7 @@ In diesem Projekt wird mittels docker-compose eine funktionierende Datenbank im 
 
 # Netzwerkplan / Sicherheitskonzept
 
-![image]()
+![image](https://github.com/yabber29/M300/blob/d93d921ed1fc07d3a5e98c987b40cba01233ed9f/Bilder/Netzwerkplan-Docker.png)
 
 Wie hier oben im Plan zu sehen ist, sind zwei Ports auf dem Container offen:
 | Port   |      Nutzen     |
