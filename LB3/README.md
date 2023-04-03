@@ -18,7 +18,7 @@ In diesem Projekt wird mittels docker-compose eine funktionierende Datenbank im 
 
 # Netzwerkplan / Sicherheitskonzept
 
-![image](https://github.com/supernova576/Modul-300/blob/main/lb3/bilder/nw-plan.png?raw=true)
+![image]()
 
 Wie hier oben im Plan zu sehen ist, sind zwei Ports auf dem Container offen:
 | Port   |      Nutzen     |
@@ -106,12 +106,12 @@ docker-compose up -d
 ```
 Beim ersten Ausführen des Codes geht es ein wenig länger, da Docker zuerst die Images vom Dockerhub herunterladen muss. Anschliessend sollte folgendes zu sehen sein: 
 
-![image](https://github.com/supernova576/Modul-300/blob/main/lb3/bilder/docker-compose.png?raw=true)
+![image]()
 
 Anschliessend geben wir in einem beliebigen Browser die folgende URL ein: http://localhost:80 oder http://localhost:zuvor_festgelegter_Port
 
 Man sollte nun folgendes sehen:
-![image](https://github.com/supernova576/Modul-300/blob/main/lb3/bilder/login.png?raw=true)
+![image]()
 
 Nun melden wir uns mit unseren Anmelde-Daten an, die im YAML-File zuvor definiert wurden:
 
@@ -120,7 +120,7 @@ Nun melden wir uns mit unseren Anmelde-Daten an, die im YAML-File zuvor definier
 | ramon | Admin1234!! |
 
 Nun sollten wir eingeloggt sein. Das Dashboard sollte ungefähr so aussehen:
-![image](https://github.com/supernova576/Modul-300/blob/main/lb3/bilder/dashboard.png?raw=true)
+![image]()
 
 
 Falls man den Container nicht mehr braucht, kann man ihn mit folgendem Command herunterfahren:
