@@ -8,7 +8,9 @@
  2. [Netzwerkplan und Sicherheitskonzept](#sicherheit)
  3. [docker-compose.yaml](#yamlhehe)
  4. [Testing](#Testing)
- 5. [Quellen](#Quellen)
+ 5. [Reflexion](#Reflexion)
+ 6. [Wissenszuwachs](#Wissenszuwachs)
+ 7. [Quellen](#Quellen)
 
 # Einführung
 
@@ -74,7 +76,7 @@ Hier sehen wir unseren beiden Services. Was welche Zeile macht, erkläre ich hie
 |:----------|:-------------|
 | nc: |Das ist die Beschreibung des Services "Nextcloud" (Abgekürzt auf nc). |
 | image: |Dieses Image wird vom Docker-Hub (hub.docker.com) heruntergeladen. Nach erfolgreichem Herunterladen wird dieses Image extrahiert und lokal gestartet.|
-| environment: | Dies sind Argumente, die man bei der Installation mitgeben kann. Beispielsweise sehen wir hier, dass der User yanis heissen wird, und das Passwort hirsch123 ist. |
+| environment: | Dies sind Argumente, die man bei der Installation mitgeben kann. Beispielsweise sehen wir hier, dass der User ramon heissen wird, und das Passwort hirsch123 ist. |
 | ports:  | Hier kann man definieren, welche Ports an den Container weitergeleitet werden. Es gilt --> **port_host:port_container**  |
 | restart: | Beim Starten vom Docker-Deamon, wird dieser Container automatisch mitgestartet. |
 | volumes:  | Volumes, die mitgegeben werden. |
