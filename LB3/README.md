@@ -115,12 +115,12 @@ docker-compose up -d
 ```
 Beim ersten Ausführen des Codes geht es ein wenig länger, da Docker zuerst die Images vom Dockerhub herunterladen muss. Anschliessend sollte folgendes zu sehen sein: 
 
-![image]()
+![image](https://github.com/yabber29/M300/blob/a4f2dc9726fb99e724777dc582aaf2bdb768d597/Bilder/docker-compose.png)
 
 Anschliessend geben wir in einem beliebigen Browser die folgende URL ein: http://localhost:80 oder http://localhost:zuvor_festgelegter_Port
 
 Man sollte nun folgendes sehen:
-![image]()
+![image](https://github.com/yabber29/M300/blob/a4f2dc9726fb99e724777dc582aaf2bdb768d597/Bilder/login-nextcloud.png)
 
 Nun melden wir uns mit unseren Anmelde-Daten an, die im YAML-File zuvor definiert wurden:
 
@@ -129,7 +129,7 @@ Nun melden wir uns mit unseren Anmelde-Daten an, die im YAML-File zuvor definier
 | ramon | Admin1234!! |
 
 Nun sollten wir eingeloggt sein. Das Dashboard sollte ungefähr so aussehen:
-![image]()
+![image](https://github.com/yabber29/M300/blob/a4f2dc9726fb99e724777dc582aaf2bdb768d597/Bilder/nextcloud.png)
 
 
 Falls man den Container nicht mehr braucht, kann man ihn mit folgendem Command herunterfahren:
