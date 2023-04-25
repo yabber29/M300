@@ -138,7 +138,7 @@ Falls man den Container nicht mehr braucht, kann man ihn mit folgendem Command h
 docker-compose down
 ```
 
-Viel Spass beim Benutzen von Nextcloud :)
+Viel Spass beim Nachmachen von Nextcloud :)
 
 # Projekt-2
 
