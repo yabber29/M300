@@ -6,8 +6,8 @@
 
  1. [Einführung](#Beschreibung) 
  2. [Projekt-Docker](#Projekt-1)
-    1. [Netzwerkplan und Sicherheitskonzept](#Netzwerkplan/Sicherheitskonzept)
-    2. [docker-compose.yaml](##docker-compose.yaml)
+    1. [Netzwerkplan/Sicherheitskonzept](#Netzwerkplan/Sicherheitskonzept)
+    2. [docker-compose.yaml](#docker-compose.yaml)
     3. [Testing](#Testing)
  3. [Projekt 2](#Projekt-Openshift)
     1. [Netzwerkplan und Sicherheitskonzept](#sicherheit)
