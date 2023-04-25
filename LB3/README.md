@@ -1,13 +1,13 @@
-# LB3 Dokumntation
+# LB3 Dokumentation
 ![image](https://github.com/yabber29/M300/blob/06c1c39667675c83fc304f3f21e6c73fef6d5a4d/Bilder/Openshift-Docker.png)
 ============================================================================================================
 
 # Inahltsverzeichnis
 
  1. [Einführung](#Beschreibung) 
- 2. [Projekt 1](#Projekt-Docker)
-    1. [Netzwerkplan und Sicherheitskonzept](#sicherheit)
-    2. [docker-compose.yaml](#yaml)
+ 2. [Projekt-Docker](#Projekt-1)
+    1. [Netzwerkplan und Sicherheitskonzept](#Netzwerkplan/Sicherheitskonzept)
+    2. [docker-compose.yaml](#docker-compose.yaml)
     3. [Testing](#Testing)
  3. [Projekt 2](#Projekt-Openshift)
     1. [Netzwerkplan und Sicherheitskonzept](#sicherheit)
@@ -23,9 +23,9 @@ Ziel dieses Projekts ist es, mittels Docker-Compose eine funktionierende Umgebun
 
 In diesem Projekt wird mittels docker-compose eine funktionierende Datenbank im Backend und Next-Cloud im Frontend verwendet. Der User kann dann unter localhost:80 Nextcloud einrichten.
 
-# Projekt 1
+# Projekt-1
 
-## Netzwerkplan / Sicherheitskonzept
+## Netzwerkplan/Sicherheitskonzept
 
 ![image](https://github.com/yabber29/M300/blob/d93d921ed1fc07d3a5e98c987b40cba01233ed9f/Bilder/Netzwerkplan-Docker.png)
 
