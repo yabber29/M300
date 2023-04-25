@@ -11,7 +11,7 @@
     3. [Testing](#Testing)
  3. [Projekt 2](#Projekt-Openshift)
     1. [Netzwerkplan und Sicherheitskonzept](#sicherheit)
-    2. [Dokumenteenstrucktur](#Dokumente)
+    2. [Dokumenteenstruktur](#Dokumente)
     3. [Testing](#testing)
  4. [Reflexion](#Reflexion)
  5. [Wissenszuwachs](#Wissenszuwachs)
@@ -23,7 +23,9 @@ Ziel dieses Projekts ist es, mittels Docker-Compose eine funktionierende Umgebun
 
 In diesem Projekt wird mittels docker-compose eine funktionierende Datenbank im Backend und Next-Cloud im Frontend verwendet. Der User kann dann unter localhost:80 Nextcloud einrichten.
 
-# Netzwerkplan / Sicherheitskonzept
+# Projekt 1
+
+## Netzwerkplan / Sicherheitskonzept
 
 ![image](https://github.com/yabber29/M300/blob/d93d921ed1fc07d3a5e98c987b40cba01233ed9f/Bilder/Netzwerkplan-Docker.png)
 
@@ -36,7 +38,7 @@ Wie hier oben im Plan zu sehen ist, sind zwei Ports auf dem Container offen:
 Alle anderen Ports sind weder von aussen her, noch von intern her (Container untereindander) erreichbar. 
 
 
-# docker-compose.yaml
+## docker-compose.yaml
 In diesem Abschnitt erkläre ich, wie ich das YAML-File aufgebaut habe.
 
 ```yml
@@ -88,7 +90,7 @@ Hier sehen wir unseren beiden Services. Was welche Zeile macht, erkläre ich hie
 | expose: | Beschreibt, welcher Port für die INTERNE Kommunikation freigegeben wird. Für eine genauere Beschreibung hilft das Kapitel Netzwerkplan / Sicherheitskonzept. |
 
 
-# Testing
+## Testing
 
 **Wichtig**: Der Service wird unter localhost:80 verfügbar sein, falls dieser Port bereits in Benutzung ist, bitte die Zeile **ports:** im YAML-File abändern (siehe Code unten): 
 
@@ -137,6 +139,8 @@ docker-compose down
 ```
 
 Viel Spass beim Benutzen von Nextcloud :)
+
+# Projekt 2
 
 # Quellenangaben
 
