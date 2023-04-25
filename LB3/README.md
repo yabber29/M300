@@ -11,7 +11,7 @@
     3. [Testing](#Testing)
  3. [Projekt-Openshift](#Projekt-2)
     1. [Netzwerkplan und Sicherheitskonzept](#Netzwerk-Overview)
-    2. [Dokumenteenstruktur](#Struktur)
+    2. [Dokumentenstruktur](#Struktur)
     3. [Testing](#Testing-Files)
  4. [Reflexion](#Reflexion)
  5. [Wissenszuwachs](#Wissenszuwachs)
@@ -151,7 +151,3 @@ Viel Spass beim Benutzen von Nextcloud :)
 
 # Quellenangaben
 
-| Objekt   |      Quelle     |
-|:----------|:-------------|
-| Docker-Compose generell | https://docs.docker.com/compose/gettingstarted/ |
-| Gute Erklärung zu restart: always | https://serverfault.com/questions/884759/how-does-restart-always-policy-work-in-docker-compose |
