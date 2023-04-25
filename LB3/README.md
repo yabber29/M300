@@ -6,9 +6,9 @@
 
  1. [Einführung](#Beschreibung) 
  2. [Projekt 1](#Projekt-Docker)
-        1. [Netzwerkplan und Sicherheitskonzept](#sicherheit)
-        2. [docker-compose.yaml](#yamlhehe)
-        3. [Testing](#Testing)
+    1. [Netzwerkplan und Sicherheitskonzept](#sicherheit)
+    2. [docker-compose.yaml](#yamlhehe)
+    3. [Testing](#Testing)
  3. [Projekt 2](#Projekt-Openshift)
  4. [Reflexion](#Reflexion)
  5. [Wissenszuwachs](#Wissenszuwachs)
