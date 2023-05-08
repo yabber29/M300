@@ -1,0 +1,53 @@
+version: '3.2'
+
+services:
+  nc:
+    image: nextcloud:apache
+    environment:
+      - POSTGRES_HOST=db
+      - POSTGRES_PASSWORD=Admin1234!!
+      - POSTGRES_DB=hehedb
+      - POSTGRES_USER=ramon
+    ports:
+      - 8080:80
+    restart: always
+    volumes:
+      - nc_data:/var/www/html
+
+  db:
+    image: postgres:alpine
+    environment:
+      - POSTGRES_PASSWORD=Admin1234!!
+      - POSTGRES_DB=hehedb
+      - POSTGRES_USER=ramon
+    restart: always
+    volumes:
+      - db_data:/var/lib/postgresql/data
+    expose:
+      - 5432
+
+  prometheus:
+    image: prom/prometheus
+    volumes:
+      - ./prometheus.yml:/etc/prometheus/prometheus.yml
+    command:
+      - '--config.file=/etc/prometheus/prometheus.yml'
+    ports:
+      - 9090:9090
+    restart: always
+
+  grafana:
+    image: grafana/grafana
+    ports:
+      - 3000:3000
+    restart: always
+
+volumes:
+  db_data:
+  nc_data:
+
+networks:
+  default:
+    external:
+      name: nginx-proxy
+

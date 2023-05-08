@@ -241,6 +241,12 @@ Die restlichen ConfigMaps sind im Ordner Bilder https://github.com/SilvioM04/M30
 ## Testing-Files
 Leider können wir keine Testfälle aufschreibe da sie sensible Daten beinhalten.
 
+![image](https://github.com/SilvioM04/M300/blob/8ce9370a4db81e89591fd07b34c1d895ed205521/Bilder/Website1.png)
+
+![image](https://github.com/SilvioM04/M300/blob/8ce9370a4db81e89591fd07b34c1d895ed205521/Bilder/Website2.png)
+
+![image](https://github.com/SilvioM04/M300/blob/8ce9370a4db81e89591fd07b34c1d895ed205521/Bilder/Website3.png)
+
 # Reflexion
 
 ## Persönlicher-Wissenstand
