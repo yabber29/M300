@@ -169,29 +169,86 @@ Ein Deployment ist eine Kubernetes-Ressource, die den gewünschten Zustand einer
 Das Deployment stellt sicher, dass eine bestimmte Anzahl von Replikaten des Webservers immer ausgeführt wird und aktualisiert die Container automatisch bei Änderungen an der Konfiguration oder dem Container-Image. Dadurch wird die Verfügbarkeit und Skalierbarkeit der Webanwendung gewährleistet.
 
 ![image](https://github.com/SilvioM04/M300/blob/859ff7d6c424827c2ad39a8d09cbdbb8894f915c/Bilder/httpd3.png)
+
+Hier werden ganz einfach den Namen, welches Projekt, den Port und welche Applikation definiert.
+
 ![image](https://github.com/SilvioM04/M300/blob/859ff7d6c424827c2ad39a8d09cbdbb8894f915c/Bilder/httpd1.png)
+
+In spec/volumes werden die ConfigMaps so benannt wie sie als Datei in OpenShift gespeichert werden, damit die Websiten funktionieren.
+
+
 ![image](https://github.com/SilvioM04/M300/blob/859ff7d6c424827c2ad39a8d09cbdbb8894f915c/Bilder/httpd2.png)
 
-### ArgoCD
+Und unter containers/volumeMounts wird angegeben unter welchem Ordner diese gespeichert werden.
 
+### ArgoCD
 #### Theorie
+Argo CD ist ein benutzerfreundliches Open-Source-Tool für das kontinuierliche Bereitstellen von Anwendungen in Kubernetes-Umgebungen. Es basiert auf den GitOps-Prinzipien und macht das Verwalten von Konfigurationen kinderleicht. Mit Argo CD können Anwendungen automatisch aus Git-Repositories bereitgestellt werden, wobei stets darauf geachtet wird, dass der gewünschte Zustand der Anwendung mit dem aktuellen übereinstimmt. Zudem profitieren Benutzer von hilfreichen Funktionen wie Versionskontrolle, der Möglichkeit, zu früheren Versionen zurückzukehren, und Überwachungstools, die den Bereitstellungsprozess effizienter, sicherer und verlässlicher gestalten.
 
 #### Praxis
+Hier wäre ein Beispiel, wie man es machen könnte, wir haben uns an diesem Beispiel orientiert.
+
+1. **Dateien ins BitBucket-Repository übertragen**: Da wir bereits ein BitBucket-Repository haben, übertragen wir unsere Dateien dorthin, einschließlich der Helm-Chart-Struktur und der ConfigMap, die unsere index.html, CSS- und Python-Dateien enthält.
+2. **ArgoCD-Projekt erstellen**: Wir melden uns bei der ArgoCD-Webkonsole an, die bereits in unserem OpenShift-Cluster installiert ist. Wir erstellen ein neues Projekt, um unsere Anwendung zu verwalten. Wir geben unserem Projekt einen Namen, z. B. "unsere-webapp-projekt", und konfigurieren die Zugriffsrechte und Clusterressourcen entsprechend unseren Anforderungen.
+3. **ArgoCD-Anwendung erstellen**: Wir erstellen innerhalb des Projekts eine neue ArgoCD-Anwendung. Wir geben die erforderlichen Details an, wie:
+  * Anwendungsname: z.B. "unsere-webapp"
+  * Projekt: Wir wählen das zuvor erstellte Projekt "unsere-webapp-projekt"
+  * Synchronisationsrichtlinie: Automatisch oder manuell, je nach unseren Präferenzen
+  * Repository-URL: Die URL unseres BitBucket-Repositorys
+  * Revisionsverlauf: Der Branch oder Tag, den wir verfolgen möchten (z. B. "master" oder "main")
+  * Pfad: Wir geben den Pfad zu unserer Helm-Chart an, z. B. "unsere-webapp"
+  * Cluster-URL: Die URL unseres OpenShift-Clusters
+  * Namespace: Der OpenShift-Projektname, in dem wir die Anwendung bereitstellen möchten
+4. **ConfigMap hinzufügen**: Um unsere index.html, CSS- und Python-Dateien in der Anwendung bereitzustellen, erstellen wir eine ConfigMap und speichern die Dateien darin. In unserer Helm-Chart fügen wir die ConfigMap in den templates-Ordner ein und binden diese ConfigMap in der deployment.yaml-Datei ein, damit unsere Webanwendung auf die in der ConfigMap gespeicherten Dateien zugreifen kann.
+![image](https://github.com/SilvioM04/M300/blob/859ff7d6c424827c2ad39a8d09cbdbb8894f915c/Bilder/ArgoCD.png)
 
 ### Helm
-
 #### Theorie
+Helm-Charts vereinfachen die Bereitstellung und Verwaltung von Anwendungen in OpenShift, da OpenShift auf Kubernetes basiert. Sie bieten eine standardisierte Methode zur Definition von Anwendungen und deren Ressourcen, was die Automatisierung und Wartung von Deployments erleichtert. Helm-Charts ermöglichen eine effiziente und skalierbare Anwendungsbereitstellung in OpenShift-Umgebungen und unterstützen die Optimierung von Entwicklungs- und Betriebsprozessen.
 
 #### Praxis
+Da wir Helm bereits installiert haben, können wir direkt mit der Erstellung und Anpassung der Ordnerstruktur für unser Helm-Chart beginnen. Hier ist die grundlegende Ordnerstruktur für ein Helm-Chart:
+![image](https://github.com/SilvioM04/M300/blob/8ce9370a4db81e89591fd07b34c1d895ed205521/Bilder/Helm.png)
+
+1. **Wir ersetzen "unsere-webapp" mit dem gewünschten Namen für unser Helm-Chart.**
+2. **Chart.yaml**: Enthält Metadaten zu unserem Helm-Chart, wie den Namen, die Version und eine Beschreibung der Anwendung.
+3. **values.yaml**: Definiert die Standardwerte für die Ressourcen unserer Anwendung, wie z.B. Image-Name, -Tag und Umgebungsvariablen.
+4. **templates/**: Enthält die Ressourcen-Templates für unsere Anwendung. Wir sollten die folgenden YAML-Dateien erstellen bzw. anpassen:
+   a. **deployment.yaml**: Definiert das Kubernetes-Deployment für unsere Anwendung, z.B. die Container-Image, Ports und Umgebungsvariablen.
+   b. **service.yaml**: Definiert den Kubernetes-Service für unsere Anwendung, der den Zugriff auf unsere Anwendung innerhalb des Clusters ermöglicht.
+   c. **route.yaml**: Definiert die OpenShift-Route für unsere Anwendung, die den externen Zugriff auf unsere Anwendung ermöglicht.
+   d. **_helpers.tpl**: Enthält wiederverwendbare Template-Funktionen, die in den anderen Ressourcen-Templates verwendet werden können.
+
+In diesen Dateien verwenden wir die Helm-Template-Sprache, um Werte aus der values.yaml-Datei in unseren Ressourcen-Templates einzubinden. Dadurch wird die Anpassung und Aktualisierung unserer Anwendung einfacher.
+
+Nachdem wir die Ordnerstruktur erstellt und angepasst haben, können wir das Helm-Chart in unser BitBucket-Repository integrieren und ArgoCD verwenden, um unsere Anwendung auf OpenShift bereitzustellen.
+
+![image](https://github.com/SilvioM04/M300/blob/8ce9370a4db81e89591fd07b34c1d895ed205521/Bilder/Helm1.png)
+![image](https://github.com/SilvioM04/M300/blob/8ce9370a4db81e89591fd07b34c1d895ed205521/Bilder/Helm2.png)
+![image](https://github.com/SilvioM04/M300/blob/8ce9370a4db81e89591fd07b34c1d895ed205521/Bilder/Helm3.png)
+
 ### ConfigMaps
 #### Theorie
+In einer Website mit mehreren HTML-Dateien, einer CSS-Datei und Python-Skripten ermöglicht eine OpenShift ConfigMap das Speichern und Verwalten von konfigurierbaren Einstellungen wie Datenbankparametern oder API-Schlüsseln. Dadurch wird die Trennung von Code und Konfiguration verbessert, was die Flexibilität und Wartung der Anwendung erleichtert.
+
 #### Praxis
+![image](https://github.com/SilvioM04/M300/blob/8ce9370a4db81e89591fd07b34c1d895ed205521/Bilder/index-html.png)
+
+Hier mussten wir nur den Namen, Namespace (so heisst das Projekt welches wir erstellt hatten, und unter «data:» dann angeben das es das index.html ist. Unter dem index.html mussten wir nur noch eingeben wie die Seite aussehen soll wie in einem Normalen HTML.
+
+Die restlichen ConfigMaps sind im Ordner Bilder "https://github.com/SilvioM04/M300/blob/8ce9370a4db81e89591fd07b34c1d895ed205521/Bilder/" abgelegt, da diese gleich aufgebaut sind.
 
 ## Testing-Files
+Leider können wir keine Testfälle aufschreibe da sie sensible Daten beinhalten.
 
 # Reflexion
 
 # Wissenszuwachs
 
 # Quellenangaben
+
+| Objekt   |      Quelle     |
+|:----------|:-------------|
+| Docker-Compose generell | https://docs.docker.com/compose/gettingstarted/ |
+| Gute Erklärung zu restart: always | https://serverfault.com/questions/884759/how-does-restart-always-policy-work-in-docker-compose |
 
