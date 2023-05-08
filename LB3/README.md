@@ -83,7 +83,7 @@ Hier sehen wir unseren beiden Services. Was welche Zeile macht, erkläre ich hie
 |:----------|:-------------|
 | nc: |Das ist die Beschreibung des Services "Nextcloud" (Abgekürzt auf nc). |
 | image: |Dieses Image wird vom Docker-Hub (hub.docker.com) heruntergeladen. Nach erfolgreichem Herunterladen wird dieses Image extrahiert und lokal gestartet.|
-| environment: | Dies sind Argumente, die man bei der Installation mitgeben kann. Beispielsweise sehen wir hier, dass der User ramon heissen wird, und das Passwort hirsch123 ist. |
+| environment: | Dies sind Argumente, die man bei der Installation mitgeben kann. Beispielsweise sehen wir hier, dass der User ramon heissen wird, und das Passwort Admin1234!! ist. |
 | ports:  | Hier kann man definieren, welche Ports an den Container weitergeleitet werden. Es gilt --> **port_host:port_container**  |
 | restart: | Beim Starten vom Docker-Deamon, wird dieser Container automatisch mitgestartet. |
 | volumes:  | Volumes, die mitgegeben werden. |
@@ -141,11 +141,51 @@ docker-compose down
 Viel Spass beim Nachmachen von Nextcloud :)
 
 # Projekt-2
+In unserem Projekt automatisieren wir das Deployment und die Aktualisierung einer Webanwendung, die aus einer Index.html und weiteren Seiten besteht. Wir verwenden BitBucket für die Versionsverwaltung und ArgoCD für die Verbindung und kontinuierliche Bereitstellung der Anwendung. Die Infrastruktur läuft auf OpenShift, einer Container-Plattform basierend auf Kubernetes.
+Wir speichern die Dateien der Anwendung lokal, und die Bereitstellung erfolgt mithilfe eines Helm-Charts, das im Templates-Ordner liegt. Der Helm-Chart ermöglicht uns die einfache Verwaltung und Aktualisierung von Kubernetes-Ressourcen, wie zum Beispiel der Route für den Zugriff auf die Anwendung.
+Durch diese automatisierte Pipeline können wir schnell Änderungen vornehmen und bereitstellen, wodurch eine effiziente und agile Entwicklungsumgebung geschaffen wird.
+
 
 ## Netzwerk-Overview
-
+Damit ich mir das ganze besser vorstellen konnte erstellte ich zuerst ein Netzwerkplan.
+![image](https://github.com/yabber29/M300/blob/7eb6d4cfea5e556d1bfed118ae8bb7b2b10ce457/Bilder/Netzwerkplan-Openshift.png)
 
 ## Struktur
+Die einzelne Prozzese werden hier dokumentiert:
+
+### BitBucket
+BitBucket ist ein webbasierter Dienst für Versionsverwaltung, der Git und Mercurial unterstützt. Entwickelt von Atlassian, ermöglicht BitBucket Teams, Quellcode in Repositories zu speichern, zu verwalten und gemeinsam daran zu arbeiten. BitBucket bietet Funktionen wie Pull-Anfragen, Issue-Tracking, Continuous Integration und Deployment Pipelines. Es ist speziell für die Zusammenarbeit in Teams konzipiert und hilft, den Softwareentwicklungsprozess zu optimieren und die Produktivität zu steigern.
+
+### Openshift
+OpenShift ist eine Container-Plattform, die von Red Hat entwickelt wurde und auf Kubernetes basiert. Es erleichtert das Erstellen, Bereitstellen und Verwalten von containerisierten Anwendungen und Microservices in einer Cloud-Umgebung. OpenShift bietet Entwicklern eine benutzerfreundliche Umgebung, automatisiert die Verwaltung von Containern und unterstützt verschiedene Programmiersprachen, Datenbanken und Frameworks. Es hilft Unternehmen dabei, ihre Entwicklungs- und Betriebsabläufe zu optimieren und eine effiziente, skalierbare und sichere Infrastruktur aufzubauen.
+
+### Projekt in Openshift
+Ein Projekt in OpenShift ist eine logische Einheit, die mehrere Anwendungen, Ressourcen und Benutzer zusammenfasst. Projekte helfen dabei, die Ressourcen in einem OpenShift-Cluster zu organisieren und zu isolieren. Sie sind das OpenShift-Äquivalent zu Kubernetes-Namensräumen und bieten zusätzliche Funktionen zur Verwaltung von Zugriffsrechten, Ressourcenquoten und -grenzen.
+
+
+
+### Deployment mit Webserver
+Ein Deployment ist eine Kubernetes-Ressource, die den gewünschten Zustand einer Anwendung definiert und deren Skalierung, Aktualisierung und Wiederherstellung automatisiert. Bei einem Webserver-Deployment wird eine Webserver-Anwendung, wie z.B. Apache oder Nginx, in einem oder mehreren Containern bereitgestellt.
+Das Deployment stellt sicher, dass eine bestimmte Anzahl von Replikaten des Webservers immer ausgeführt wird und aktualisiert die Container automatisch bei Änderungen an der Konfiguration oder dem Container-Image. Dadurch wird die Verfügbarkeit und Skalierbarkeit der Webanwendung gewährleistet.
+
+![image](https://github.com/SilvioM04/M300/blob/859ff7d6c424827c2ad39a8d09cbdbb8894f915c/Bilder/httpd3.png)
+![image](https://github.com/SilvioM04/M300/blob/859ff7d6c424827c2ad39a8d09cbdbb8894f915c/Bilder/httpd1.png)
+![image](https://github.com/SilvioM04/M300/blob/859ff7d6c424827c2ad39a8d09cbdbb8894f915c/Bilder/httpd2.png)
+
+### ArgoCD
+
+#### Theorie
+
+#### Praxis
+
+### Helm
+
+#### Theorie
+
+#### Praxis
+### ConfigMaps
+#### Theorie
+#### Praxis
 
 ## Testing-Files
 
