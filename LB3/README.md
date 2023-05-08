@@ -236,14 +236,24 @@ In einer Website mit mehreren HTML-Dateien, einer CSS-Datei und Python-Skripten 
 
 Hier mussten wir nur den Namen, Namespace (so heisst das Projekt welches wir erstellt hatten), und unter «data:» dann angeben das es das index.html ist. Unter dem index.html mussten wir nur noch eingeben wie die Seite aussehen soll wie in einem Normalen HTML.
 
-Die restlichen ConfigMaps sind im Ordner Bilder https://github.com/SilvioM04/M300/blob/8ce9370a4db81e89591fd07b34c1d895ed205521/Bilder/"abgelegt, da diese gleich aufgebaut sind.
+Die restlichen ConfigMaps sind im Ordner Bilder https://github.com/SilvioM04/M300/blob/8ce9370a4db81e89591fd07b34c1d895ed205521/Bilder/abgelegt, da diese gleich aufgebaut sind.
 
 ## Testing-Files
 Leider können wir keine Testfälle aufschreibe da sie sensible Daten beinhalten.
 
-#
-
 # Reflexion
+
+## Persönlicher-Wissenstand
+
+**Helm** ist ein Paketmanager für Kubernetes, der dabei hilft, Anwendungen und Services in Kubernetes-Clustern zu definieren, zu installieren und zu aktualisieren. Helm-Charts sind strukturierte Pakete, die die erforderlichen Komponenten und Ressourcen enthalten, um eine Anwendung in einem Kubernetes-Cluster bereitzustellen. Sie vereinfachen die Bereitstellung und Verwaltung von Anwendungen und können leicht versioniert und geteilt werden.
+
+**ArgoCD** ist ein kontinuierliches Bereitstellungstool für Kubernetes, das sich auf GitOps-Prinzipien stützt. Es ermöglicht, dass die gewünschte Anwendungsstruktur direkt aus einem Git-Repository synchronisiert wird. ArgoCD unterstützt automatische Synchronisation, Rollbacks und eine Vielzahl von Anwendungs- und Umgebungskonfigurationen, um sicherzustellen, dass der Clusterzustand immer dem im Repository definierten Zustand entspricht.
+
+**OpenShift** ist eine Kubernetes-Distribution von Red Hat, die zusätzliche Funktionen und Sicherheit bietet. Es bietet eine umfassende Plattform für die Entwicklung, Bereitstellung und Verwaltung von Container-basierten Anwendungen in der Cloud oder On-Premises. OpenShift erweitert die Möglichkeiten von Kubernetes durch die Integration von zusätzlichen Tools, wie Source-to-Image (S2I) und Operators, um den Entwicklungsprozess zu erleichtern und zu automatisieren.
+
+**BitBucket** ist ein webbasiertes Versionskontrollsystem, das auf Git und Mercurial basiert und von Atlassian entwickelt wurde. Es ermöglicht die Zusammenarbeit an Code, die Verwaltung von Repositories, Code-Reviews und die Integration mit Continuous Integration und Continuous Deployment (CI/CD) Tools. BitBucket bietet sowohl Cloud- als auch Server-basierte Lösungen und lässt sich gut in die Atlassian-Produktfamilie (Jira, Confluence usw.) integrieren.
+
+**ConfigMaps** sind ein Kubernetes-Objekt, das genutzt wird, um konfigurationsbezogene Daten in einer Key-Value-Struktur zu speichern. In OpenShift werden ConfigMaps verwendet, um Anwendungen von Umgebungsvariablen oder Konfigurationsdateien zu trennen. Sie ermöglichen die zentrale Verwaltung von Konfigurationen und können zur Laufzeit in Container gemountet oder als Umgebungsvariablen injiziert werden, wodurch die Notwendigkeit von Neuerstellung von Container-Images bei Konfigurationsänderungen reduziert wird.
 
 
 # Wissenszuwachs
