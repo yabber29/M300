@@ -236,7 +236,7 @@ In einer Website mit mehreren HTML-Dateien, einer CSS-Datei und Python-Skripten 
 
 Hier mussten wir nur den Namen, Namespace (so heisst das Projekt welches wir erstellt hatten), und unter «data:» dann angeben das es das index.html ist. Unter dem index.html mussten wir nur noch eingeben wie die Seite aussehen soll wie in einem Normalen HTML.
 
-Die restlichen ConfigMaps sind im Ordner Bilder https://github.com/SilvioM04/M300/blob/8ce9370a4db81e89591fd07b34c1d895ed205521/Bilder/abgelegt, da diese gleich aufgebaut sind.
+Die restlichen ConfigMaps sind im Ordner Bilder https://github.com/SilvioM04/M300/blob/8ce9370a4db81e89591fd07b34c1d895ed205521/Bilder abgelegt, da diese gleich aufgebaut sind.
 
 ## Testing-Files
 Leider können wir keine Testfälle aufschreibe da sie sensible Daten beinhalten.
