@@ -144,10 +144,14 @@ Viel Spass beim Nachmachen von Nextcloud :)
 
 ## Netzwerk-Overview
 
+
 ## Struktur
 
 ## Testing-Files
 
+# Reflexion
+
+# Wissenszuwachs
 
 # Quellenangaben
 
