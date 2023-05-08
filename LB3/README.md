@@ -162,8 +162,6 @@ OpenShift ist eine Container-Plattform, die von Red Hat entwickelt wurde und auf
 ### Projekt in Openshift
 Ein Projekt in OpenShift ist eine logische Einheit, die mehrere Anwendungen, Ressourcen und Benutzer zusammenfasst. Projekte helfen dabei, die Ressourcen in einem OpenShift-Cluster zu organisieren und zu isolieren. Sie sind das OpenShift-Äquivalent zu Kubernetes-Namensräumen und bieten zusätzliche Funktionen zur Verwaltung von Zugriffsrechten, Ressourcenquoten und -grenzen.
 
-
-
 ### Deployment mit Webserver
 Ein Deployment ist eine Kubernetes-Ressource, die den gewünschten Zustand einer Anwendung definiert und deren Skalierung, Aktualisierung und Wiederherstellung automatisiert. Bei einem Webserver-Deployment wird eine Webserver-Anwendung, wie z.B. Apache oder Nginx, in einem oder mehreren Containern bereitgestellt.
 Das Deployment stellt sicher, dass eine bestimmte Anzahl von Replikaten des Webservers immer ausgeführt wird und aktualisiert die Container automatisch bei Änderungen an der Konfiguration oder dem Container-Image. Dadurch wird die Verfügbarkeit und Skalierbarkeit der Webanwendung gewährleistet.
@@ -200,6 +198,7 @@ Hier wäre ein Beispiel, wie man es machen könnte, wir haben uns an diesem Beis
   * Cluster-URL: Die URL unseres OpenShift-Clusters
   * Namespace: Der OpenShift-Projektname, in dem wir die Anwendung bereitstellen möchten
 4. **ConfigMap hinzufügen**: Um unsere index.html, CSS- und Python-Dateien in der Anwendung bereitzustellen, erstellen wir eine ConfigMap und speichern die Dateien darin. In unserer Helm-Chart fügen wir die ConfigMap in den templates-Ordner ein und binden diese ConfigMap in der deployment.yaml-Datei ein, damit unsere Webanwendung auf die in der ConfigMap gespeicherten Dateien zugreifen kann.
+
 ![image](https://github.com/SilvioM04/M300/blob/859ff7d6c424827c2ad39a8d09cbdbb8894f915c/Bilder/ArgoCD.png)
 
 ### Helm
@@ -208,6 +207,7 @@ Helm-Charts vereinfachen die Bereitstellung und Verwaltung von Anwendungen in Op
 
 #### Praxis
 Da wir Helm bereits installiert haben, können wir direkt mit der Erstellung und Anpassung der Ordnerstruktur für unser Helm-Chart beginnen. Hier ist die grundlegende Ordnerstruktur für ein Helm-Chart:
+
 ![image](https://github.com/SilvioM04/M300/blob/8ce9370a4db81e89591fd07b34c1d895ed205521/Bilder/Helm.png)
 
 1. **Wir ersetzen "unsere-webapp" mit dem gewünschten Namen für unser Helm-Chart.**
@@ -234,16 +234,24 @@ In einer Website mit mehreren HTML-Dateien, einer CSS-Datei und Python-Skripten 
 #### Praxis
 ![image](https://github.com/SilvioM04/M300/blob/8ce9370a4db81e89591fd07b34c1d895ed205521/Bilder/index-html.png)
 
-Hier mussten wir nur den Namen, Namespace (so heisst das Projekt welches wir erstellt hatten, und unter «data:» dann angeben das es das index.html ist. Unter dem index.html mussten wir nur noch eingeben wie die Seite aussehen soll wie in einem Normalen HTML.
+Hier mussten wir nur den Namen, Namespace (so heisst das Projekt welches wir erstellt hatten), und unter «data:» dann angeben das es das index.html ist. Unter dem index.html mussten wir nur noch eingeben wie die Seite aussehen soll wie in einem Normalen HTML.
 
-Die restlichen ConfigMaps sind im Ordner Bilder "https://github.com/SilvioM04/M300/blob/8ce9370a4db81e89591fd07b34c1d895ed205521/Bilder/" abgelegt, da diese gleich aufgebaut sind.
+Die restlichen ConfigMaps sind im Ordner Bilder https://github.com/SilvioM04/M300/blob/8ce9370a4db81e89591fd07b34c1d895ed205521/Bilder/"abgelegt, da diese gleich aufgebaut sind.
 
 ## Testing-Files
 Leider können wir keine Testfälle aufschreibe da sie sensible Daten beinhalten.
 
+#
+
 # Reflexion
 
+
 # Wissenszuwachs
+Was habe ich alles gelernt:
+* Openshift kennengelernt
+* ArgoCD, BitBucket, Helm Charts und skripting kennengelernt
+* Systemumgebung besseres verständnis
+* Cloud mit Container verbindung 
 
 # Quellenangaben
 
